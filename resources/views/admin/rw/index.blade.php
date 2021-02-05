@@ -20,7 +20,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Nomor</th>
+                                    <th>No</th>
                                     <th>Nama Rw</th>
                                     <th>Nama Desa</th>
                                     <th>Action</th>
@@ -39,12 +39,11 @@
                                         <form action="{{route('rw.destroy',$data->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                        <td>
-                                            <a class="btn btn-info btn-sm btn-rounded " href="{{route('rw.edit',$data->id)}}"> <i class="fa fa-edit"></i></a>
-                                            <a class="btn btn-warning btn-sm btn-rounded " href="{{route('rw.show',$data->id)}}"> <i class="fa fa-eye"></i></a>
-                                            <button type="submit" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger btn-sm btn-rounded"><i class="fa fa-trash"></i></button>
-                                        </td>
-                                        </form>
+                                  <td>
+                                  <a href="{{route('rw.show', $data->id)}}" class="btn btn-success">Show <i class="far fa-eye"></i></a>
+                                  <a href="{{route('rw.edit', $data->id)}}" class="btn btn-warning">Edit  <i class="far fa-edit"></i></a>
+                                  <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ?')">Hapus <i class="far fa-trash-alt"></i></button>
+                                  </td>                                    
                                     </tr>
                                 </form>
                                 @endforeach

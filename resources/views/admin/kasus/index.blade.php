@@ -50,10 +50,9 @@
                                             <form action="{{route('kasus.destroy',$data->id)}}"  method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <a class="btn btn-info btn-sm btn-rounded " href="{{route('kasus.edit',$data->id)}}"> <i class="fa fa-edit"></i></a>
-                                            <a class="btn btn-warning btn-sm btn-rounded " href="{{route('kasus.show',$data->id)}}"> <i class="fa fa-eye"></i></a>
-                                            <button type="submit" onclick="return confirm('Apakah anda yakin?');" class="btn btn-danger btn-sm btn-rounded"><i class="fa fa-trash"></i></button>
-                                            </form>
+                                      <a href="{{route('kasus.show', $data->id)}}" class="btn btn-success">Show <i class="far fa-eye"></i></a>
+                                      <a href="{{route('kasus.edit', $data->id)}}" class="btn btn-warning">Edit  <i class="far fa-edit"></i></a>
+                                      <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ?')">Hapus <i class="far fa-trash-alt"></i></button>
                                             </td>
                                         </tr>
                                     @endforeach
